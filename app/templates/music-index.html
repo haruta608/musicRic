@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="content">
+    <ul>
+        <ul class="user-choice">
+            <li>
+                <button type="button" class="btn btn-primary btn-lg">
+                    <a href="{{ url_for('search_music_page') }}">楽曲を探す</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="btn btn-primary btn-lg">
+                    <a href="{{ url_for('in_music_page') }}">楽曲を入れる</a>
+                </button>
+            </li>
+        </ul>
+        <p><span class="rec-title">みんなのおすすめ</span></p>
+        {% for article in articles %}
+        <li class="card-wrapper">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article["music_title"] }} / {{ article["artist"] }}</h5>
+                    <p class="card-text">{{ article["recommend"] }}</p>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+        {% if not articles %}
+        <p>投稿された記事はありません</p>
+        {% endif %}
+    </ul>
+</div>
+<ul class="login-out">
+    <li>
+        <button type="button" class="btn btn-primary btn-sm">
+            <a href="{{ url_for('log_musics_index') }}" methods="post">トップに戻る</a>
+        </button>
+    </li>
+    <li>
+        <button type="button" class="btn btn-secondary btn-sm">
+            <a href="{{ url_for('logout') }}" methods="post"> ログアウト </a>
+        </button>
+    </li>
+</ul>
+{% endblock %}

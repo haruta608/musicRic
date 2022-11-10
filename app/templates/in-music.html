@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="content">
+    <form action="{{ url_for('post_music') }}" method="post">
+        <div>
+            <label for="music_title">曲名:</label>
+            <input class="form-control" id="music_title" type="text" name="music_title" />
+        </div>
+        <div>
+            <label for="artist">アーティスト名:</label>
+            <input class="form-control" id="artist" type="text" name="artist" />
+        </div>
+        <div>
+            <label for="feeling">聴くときに適した気持ち:</label>
+
+            <select name="feeling" class="form-select">
+                <option value="">選択してください</option>
+                <option value="happy">楽しい・嬉しい</option>
+                <option value="normal">普通</option>
+                <option value="sad">悲しい・寂しい</option>
+                <option value="tired">疲れた</option>
+            </select>
+        </div>
+        <div>
+            <label for="time">聴くのに適した時間:</label>
+
+            <select name="time" class="form-select">
+                <option value="">選択してください</option>
+                <option value="zero">0時~2時台</option>
+                <option value="three">3時~5時台</option>
+                <option value="six">6時~8時台</option>
+                <option value="nine">9時~11時台</option>
+                <option value="twelve">12時~14時台</option>
+                <option value="thirteen">15時~17時台</option>
+                <option value="eighteen">18時~20時台</option>
+                <option value="twenty-one">21時~23時台</option>
+            </select>
+        </div>
+        <div>
+            <label for="recommend">オススメpoint:</label>
+            <textarea class="form-control" id="recommend" name="recommend" rows="5" placeholder=""></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-sm btn-sub">投稿</button>
+        </div>
+    </form>
+    <ul class="login-out">
+        <li>
+            <button type="button" class="btn btn-primary btn-sm">
+                <a href="{{ url_for('log_musics_index') }}" methods="post">トップに戻る</a>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="btn btn-secondary btn-sm">
+                <a href="{{ url_for('logout') }}" methods="post"> ログアウト </a>
+            </button>
+        </li>
+    </ul>
+</div>
+{% endblock %}

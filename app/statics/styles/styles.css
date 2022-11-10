@@ -1,0 +1,77 @@
+.content {
+    padding: 20px;
+}
+
+.content ul, .login-out {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contents-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.app-title {
+  font-size: 3.4rem;
+  font-style: italic;
+  letter-spacing: .1em;
+  color: #4169e1;
+  text-shadow: -4px 3px 0 #fff, -8px 6px 0 #000;
+}
+p {
+    font-size: 18px;
+}
+.rec-title{
+    border-bottom: dotted 3px #4169e1 !important;
+}
+/* ボタンのCSS リンクを白い色に固定 */
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+a:link, a:visited, a:hover, a:active {
+  color: #fff !important;
+}
+
+.btn-sub, .btn-lg {
+    background-color: #4169e1 !important;
+    border-color: #4169e1 !important;
+}
+
+/* cardコンテンツを中央よせにする */
+.card-wrapper {
+  display: flex; /*flexboxの指定*/
+  justify-content: center;  /*中央寄せ*/
+}
+
+/* liの横並び */
+.user-choice li, .login-out li{
+    display: inline-flex;
+    justify-content: center;  /*中央寄せ*/
+    margin-bottom: 10px;
+}
+
+/* formタグの修正 */
+.form-select, .form-control {
+    display: inline !important;
+    width: 25% !important;
+    margin: 10px 0;
+}
+
+/* ログインログアウトの位置を変える */
+.login-out {
+    margin-top: 20px;
+}
+
+
+/* セレクトボックス */
+label {
+    font-size: 18px;
+}
+.rec-wrap {
+    margin: 10px 10px !important;
+}

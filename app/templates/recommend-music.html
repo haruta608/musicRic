@@ -1,0 +1,27 @@
+{% extends "music-search.html" %}
+{% block recommend %}
+<div class="recommend-content">
+    {% if not article['music_title'] %}
+    <div>
+        <p>ごめんなさい。該当する楽曲はありません。。。</p>
+    </div>
+    {% else %}
+    <div class="rec-wrap">
+        <label for="title">{{ user["username"] }}さんにおすすめ楽曲はこちら！</label>
+    </div>
+    <div>
+        <span class="rec-title"><label for="body">曲名</label></span>
+        <p>{{ article['music_title'] }}</p>
+
+    </div>
+    <div>
+        <span class="rec-title"><label for="body">アーティスト名</label></span>
+        <p>{{ article['artist'] }}</p>
+    </div>
+    <div>
+        <span class="rec-title"><label for="body">spotifyリンク</label></span>
+        <p>{{ article['spotify_url'] }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
